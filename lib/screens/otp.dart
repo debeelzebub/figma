@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/register.dart';
 
+// ignore: camel_case_types
 class My_otp extends StatelessWidget {
   const My_otp({super.key});
 
@@ -17,7 +18,7 @@ class My_otp extends StatelessWidget {
                   children: [
                     IconButton(onPressed: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context)=> My_register()));
-                    }, icon: Icon(Icons.arrow_back,size: 35,)),
+                    }, icon:const Icon(Icons.arrow_back,size: 35,)),
                     SizedBox(
                       width: w/7,
                     ),
@@ -30,7 +31,7 @@ class My_otp extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    decoration: BoxDecoration(
+                    decoration:const BoxDecoration(
                       
                     ),
                   ),

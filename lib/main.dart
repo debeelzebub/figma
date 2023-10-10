@@ -1,11 +1,23 @@
-// ignore: unused_import
-// import 'dart:js';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:project/bloclogin/bloc/bloc_login_bloc.dart';
+import 'package:project/blocprofile/bloc/bloc_profile_bloc.dart';
 import 'package:project/screens/login.dart';
-// import 'dart:ui';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp( const MyApp(), 
+  runApp( 
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context)=>BlocLoginBloc()
+          ),
+        BlocProvider(
+          create: (context)=>BlocProfileBloc()
+          ),
+         
+        
+      ],
+      child: const MyApp()), 
   );
 }
 class MyApp extends StatelessWidget {

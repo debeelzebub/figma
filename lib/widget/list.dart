@@ -16,10 +16,10 @@ MyAuthorlist({super.key,required this.img,required this.name});
           children: [
             CircleAvatar(
               radius: 45,
-              backgroundImage:AssetImage(img) ,
+              backgroundImage:NetworkImage(img) ,
             ),
-            SizedBox(height: 2,),
-            Text(name,softWrap: true,textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold),),
+            const SizedBox(height: 2,),
+            Text(name,softWrap: true,textAlign: TextAlign.center,style:const TextStyle(fontWeight: FontWeight.bold),),
           ],
         ),
       );

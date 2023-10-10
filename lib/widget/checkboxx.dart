@@ -15,7 +15,7 @@ class _CheckBoxState extends State<CheckBox> {
     return  Row(
           children: [
             Checkbox(
-              side: BorderSide(color:Color(0x190A0A0A) ),
+              side:const BorderSide(color:Color(0x190A0A0A) ),
               
               value: widget.val, 
               onChanged:(value) 
@@ -26,8 +26,8 @@ class _CheckBoxState extends State<CheckBox> {
               },
             //  controlAffinity: ,
             ),
-            Text("I accept all"),
-            TextButton(onPressed: (){}, child:Text("Terms of Use and Privacy Policy"))
+            const Text("I accept all"),
+            TextButton(onPressed: (){}, child:const Text("Terms of Use and Privacy Policy"))
           ],
         );
   }

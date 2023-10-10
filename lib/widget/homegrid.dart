@@ -3,7 +3,7 @@ import 'package:project/class/popular1.dart';
 import 'package:project/widget/girdcard.dart';
 // ignore: must_be_immutable
 class MyPopularlist extends StatelessWidget {
- MyPopularlist({super.key});
+ const MyPopularlist({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class MyGridcard extends StatelessWidget {
   String img,text1,text2;
+  // ignore: prefer_typing_uninitialized_variables
   var color;
   MyGridcard({super.key,
   required this.img,
@@ -29,8 +30,8 @@ class MyGridcard extends StatelessWidget {
               left: 25,
               child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("$text1",style: TextStyle(color: color ,fontSize: 23,fontWeight: FontWeight.bold),),
-                  Text("$text2",style: TextStyle(color: color,fontSize: 16,fontWeight: FontWeight.bold))
+                  Text(text1,style: TextStyle(color: color ,fontSize: 23,fontWeight: FontWeight.bold),),
+                  Text(text2,style: TextStyle(color: color,fontSize: 16,fontWeight: FontWeight.bold))
                 ],
               ),
             ) 

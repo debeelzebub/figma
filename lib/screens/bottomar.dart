@@ -5,7 +5,7 @@ import 'package:project/screens/profile.dart';
 
 
 class MyBottombar extends StatefulWidget {
-  MyBottombar({super.key});
+  const MyBottombar({super.key});
 
   @override
   State<MyBottombar> createState() => _MyBottombarState();
@@ -13,31 +13,16 @@ class MyBottombar extends StatefulWidget {
 
 class _MyBottombarState extends State<MyBottombar> {
  
-  PersistentTabController _controller =PersistentTabController(initialIndex: 0);
-   int _select = 0;
+  final PersistentTabController _controller =PersistentTabController(initialIndex: 0);
   final List<Widget> _listOfWidget = [
-  My_Home(), 
-  MyProfile()
+  const My_Home(), 
+  const MyProfile()
   ];
 
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-       appBar: AppBar(
-        automaticallyImplyLeading:_select==0?true:false ,
-
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        title:_select==0?Text("Home"):Text("Profile"),
-        actions: [
-          IconButton(onPressed: (){
-            
-          }, icon: Icon(Icons.search))
-        ],
-      ),
-      drawer: Drawer(),
-       body: PersistentTabView(
+    return  PersistentTabView(
               context,
              controller: _controller,
              screens: _listOfWidget,
@@ -46,7 +31,7 @@ class _MyBottombarState extends State<MyBottombar> {
           hideNavigationBarWhenKeyboardShows: true,
           popAllScreensOnTapOfSelectedTab: true,
           navBarStyle: NavBarStyle.style3,
-          screenTransitionAnimation: ScreenTransitionAnimation(
+          screenTransitionAnimation:const ScreenTransitionAnimation(
             animateTabTransition: true,
             curve: Curves.ease,
             duration: Duration(
@@ -54,30 +39,23 @@ class _MyBottombarState extends State<MyBottombar> {
             )
           ),
           
-            )
-    );
+            );
   }
 
   List<PersistentBottomNavBarItem> _navBarItems() {
   return [
     PersistentBottomNavBarItem(
-      icon: IconButton(onPressed: (){
-        setState(() {
-          _select=0;
-        });
-      }, icon: Icon(Icons.home)),
+      icon:const Icon(Icons.home),
       activeColorPrimary: Colors.black,
       inactiveColorPrimary: Colors.grey,
+     
     ),
     
     PersistentBottomNavBarItem(
-      icon: IconButton(onPressed: (){
-        setState(() {
-          _select=1;
-        });
-      }, icon: Icon(Icons.person)),
+      icon:const Icon(Icons.person),
       activeColorPrimary: Colors.black,
       inactiveColorPrimary: Colors.grey,
+      
     ),
   ];
 }

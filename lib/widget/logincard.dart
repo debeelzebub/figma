@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 class MyloginCard extends StatefulWidget {
   String label,htext;
   bool obscureText,con;
+  // ignore: prefer_typing_uninitialized_variables
   var controller,widg;
   MyloginCard({super.key,
   required this.label,
@@ -36,15 +37,15 @@ class _MyloginCardState extends State<MyloginCard> {
                 color: Color(0xFF0073E6))))):const SizedBox()
           ],
         ),
-        widget.widg==1?const SizedBox():SizedBox(height: 10,),
+        widget.widg==1?const SizedBox():const SizedBox(height: 10,),
         TextFormField(
           controller: widget.controller,
           obscureText:widget.obscureText ,
           obscuringCharacter: '*',
           decoration: InputDecoration(
-            contentPadding: EdgeInsets.all(22),
+            contentPadding:const EdgeInsets.all(22),
             hintText: widget.htext,
-            hintStyle: GoogleFonts.inter(textStyle:TextStyle(color:Color(0xFF7C7C7C),fontSize: 14)),
+            hintStyle: GoogleFonts.inter(textStyle:const TextStyle(color:Color(0xFF7C7C7C),fontSize: 14)),
             focusedBorder:const OutlineInputBorder(
             borderSide: BorderSide(color: Colors.blue)),
             enabledBorder:const OutlineInputBorder(
@@ -65,7 +66,7 @@ class _MyloginCardState extends State<MyloginCard> {
               }, 
               icon: Icon(isshow==false? 
                 Icons.visibility_off_outlined:Icons.visibility_outlined,
-                color:Color.fromARGB(221, 124, 124, 124) ,
+                color:const Color.fromARGB(221, 124, 124, 124) ,
               )
             ):null ,
           ),

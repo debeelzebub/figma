@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:project/class/popular1.dart';
 import 'package:project/widget/arrivalcard.dart';
 
 // ignore: must_be_immutable
 class MyArrival extends StatefulWidget {
-  MyArrival({super.key});
+ const MyArrival({super.key});
 
   @override
   State<MyArrival> createState() => _MyArrivalState();
 }
 
 class _MyArrivalState extends State<MyArrival> {
+   List arrival=[
+    "assets/image1/Rectangle 22033.png",
+    "assets/image1/Rectangle 22034.png",
+    "assets/image1/Rectangle 22018.png",
+    "assets/image1/Rectangle 22019.png",
+    "assets/image1/Rectangle 22034.png",
+    "assets/image1/Rectangle 22018.png",
+    "assets/image1/Rectangle 22019.png",
+  ];
  
   var selectedindex=-1;
-  bool select=false;
  
 
   @override
@@ -24,22 +31,20 @@ class _MyArrivalState extends State<MyArrival> {
       itemBuilder: (context , index){
         
       return  MyArrivalCard(
-        img: "${arrival[index].img}",
+        img: arrival[index],
+        isSelect:selectedindex==index,
       onTap: (){
+        // selectedindex=index;
         setState(() {
-          
-          print(selectedindex);
           if(selectedindex==index){
             selectedindex=-1;
-          }
-          else{
+          }else{
             selectedindex=index;
           }
-          
         });
 
       },
-      isSelect:selectedindex==index);
+      );
     }, separatorBuilder: ( BuildContext context, int index ) { 
       return const SizedBox(width: 10,);
      },

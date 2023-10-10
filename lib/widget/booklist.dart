@@ -11,29 +11,29 @@ class BookList extends StatelessWidget {
         child: ListTile(
           title: Row(
             children: [
-              Container(
+              SizedBox(
             child: Image(image: AssetImage(img),height: 90,)
             ) ,
-            SizedBox(width: 15,),
+            const SizedBox(width: 15,),
               Column( crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                     Text("$text1",style: TextStyle(fontSize: 19,fontWeight: FontWeight.bold),),
-                     SizedBox(height: 5,),
-                     Text("$text2"),
-                     SizedBox(height: 15,),
+                     Text(text1,style:const TextStyle(fontSize: 19,fontWeight: FontWeight.bold),),
+                     const SizedBox(height: 5,),
+                     Text(text2),
+                     const SizedBox(height: 15,),
                      Row(
                       children: [
-                        Text("$hasgtag1",style: TextStyle(fontSize:14,color: Color.fromARGB(255, 163, 89, 62))),
-                        SizedBox(width:7,),
-                        Text("$hasgtag2",style: TextStyle(fontSize:14,color: Color.fromARGB(255, 163, 89, 62)))
+                        Text(hasgtag1,style:const TextStyle(fontSize:14,color: Color.fromARGB(255, 163, 89, 62))),
+                        const SizedBox(width:7,),
+                        Text(hasgtag2,style:const TextStyle(fontSize:14,color: Color.fromARGB(255, 163, 89, 62)))
                       ],
                      ),
-                     SizedBox(height: 10,)
+                     const SizedBox(height: 10,)
                 ],
               ),
             ],
           ),
-          trailing: Icon(Icons.bookmark),
+          trailing: const Icon(Icons.bookmark),
         ),
       );
   }
